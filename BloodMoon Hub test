@@ -1,0 +1,26 @@
+if game.PlaceId == 2788229376 then
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    local Window = Library.CreateLib("BloodMoon Hub", "BloodTheme")
+    local Main = Window:NewTab("Main")
+    local Fun = Window:NewTab("Fun Stuff")
+    -- MAIN SECTION
+    local MainSection = Main:NewSection("[NOT DONE YET]")
+    -- FUN SECTION
+    local FunSection = Fun:NewSection("Superpowers")
+    FunSection:NewButton("Batman!", "Gives you superpower", function()      
+        print("Batman!")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/4lrq/4lrq/main/Batman"))()
+    end)
+    FunSection:NewButton("Deadshot!", "Gives you superpower", function()
+        print("Deadshot!")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/4lrq/4lrq/main/Deadhshot"))()
+    end)
+    FunSection:NewButton("Venom!", "Gives you superpower", function()
+        print("Venom!")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/4lrq/4lrq/main/Venom2"))()
+    end)
+    FunSection:NewButton("Wolverine!", "Gives your superpower", function()
+        print("Wolverine!")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/4lrq/4lrq/main/Wolverine"))()
+    end)
+end
