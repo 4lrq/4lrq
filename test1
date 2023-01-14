@@ -1,0 +1,46 @@
+local AutoGrind = false
+
+game.Players.LocalPlayer.CharacterAdded:Connect(function()
+		AutoGrind = false
+
+local function AutoGrindStrength()
+		if not AutoGrind then
+			AutoGrind = true
+			coroutine.wrap(function()
+				local Player = game.Players.LocalPlayer
+				local c = Player.Character
+				local OldCFr = c.HumanoidRootPart.CFrame
+
+				local Tries = 0 
+				repeat wait(0.1) Tries += 1
+					c.HumanoidRootPart.CFrame = workspace.Ignored.Shop["[HeavyWeights] - $250"].Head.CFrame
+					fireclickdetector(workspace.Ignored.Shop["[HeavyWeights] - $250"].ClickDetector)	
+				until Tries >= 50 or not c or not c:FindFirstChild("Humanoid") or c:FindFirstChild"[HeavyWeights]" or Player.Backpack:FindFirstChild"[HeavyWeights]"
+				c.HumanoidRootPart.CFrame = OldCFr
+				if Player:WaitForChild("Backpack"):FindFirstChild("[HeavyWeights]") then
+					c.Humanoid:EquipTool(Player:WaitForChild("Backpack"):FindFirstChild("[HeavyWeights]"))
+
+				end
+				while AutoGrind do
+					if Player:WaitForChild("Backpack"):FindFirstChild("[HeavyWeights]") then
+						if c and c.Humanoid then
+							c.Humanoid:EquipTool(Player:WaitForChild("Backpack"):FindFirstChild("[HeavyWeights]"))
+						end
+					end
+					Player.Character["[HeavyWeights]"]:Activate()
+					wait(1)
+				end
+			end)()
+		end
+	end
+
+
+
+	local function StopAutoGrindStrength()
+		AutoGrind = false
+
+					if Chat == ".muscle" then
+						AutoGrindStrength()
+					elseif Chat == ".stop muscle" then
+						StopAutoGrindStrength()
+	end
