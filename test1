@@ -43,4 +43,4 @@ local function AutoGrindStrength()
 						AutoGrindStrength()
 					elseif Chat == ".stop muscle" then
 						StopAutoGrindStrength()
-	end
+
